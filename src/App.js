@@ -8,7 +8,7 @@ class App extends Component {
       {
         id: 1,
         title: 'Pray',
-        completed: true
+        completed: false
       },
       {
         id: 2,
@@ -18,21 +18,24 @@ class App extends Component {
       {
         id: 3,
         title: 'Workout',
-        completed: true
+        completed: false
       },     
       {
         id: 4,
         title: 'Read',
-        completed: true
+        completed: false
       }
     ]
   }
 
+  markComplete = (e) =>{
+    console.log("hi")
+}
  render(){
    console.log(this.state.todos);
     return (
       <div className="App">
-        <Todos todos ={this.state.todos}/>
+        <Todos todos ={this.state.todos} markComplete={this.markComplete} />
       </div>
     );
   }
